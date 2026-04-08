@@ -9,7 +9,7 @@ const CONFIG = {
 
     // Блок 1. Головний екран (Hero)
     hero: {
-        background_image: "images/photo.jpeg",
+        background_image: "images/photo11.png",
     },
 
     // Контакти / Куди відправляти форму
