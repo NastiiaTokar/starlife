@@ -4,7 +4,7 @@ const CONFIG = {
     // Логотип сайту
     logo: {
         text: "STARLIFE CAMP",
-        url: "images/logo.jpg"
+        url: "images/logo.png"
     },
 
     // Блок 1. Головний екран (Hero)
@@ -14,7 +14,7 @@ const CONFIG = {
 
     // Блок 2. Про нас (Star Life School)
     about: {
-        image_or_video_preview: "images/photo.jpeg"
+        image_or_video_preview: "images/photo.JPEG"
     },
 
     // Блок 3. Чому ми? (4 картки)
@@ -87,16 +87,16 @@ const CONFIG = {
 
     // Блок 5. Галерея (6-7 фото різного формату)
     gallery: [
-        "images/evening2.jpeg",
-        "images/evening1.jpeg",
-        "images/evening3.jpeg",
-        "images/evening4.jpeg",
-        "images/food2.jpeg",
-        "images/playg2.jpeg",
-        "images/playg1.jpeg",
-        "images/park2.jpeg",
-        "images/park.jpeg",
-        "images/playg3.jpeg"
+        "images/evening2.png",
+        "images/evening1.png",
+        "images/evening3.png",
+        "images/evening4.JPEG",
+        "images/food2.JPEG",
+        "images/playg2.JPEG",
+        "images/playg1.JPEG",
+        "images/park2.JPEG",
+        "images/park.JPEG",
+        "images/playg3.JPEG"
     ],
 
     // Блок 6. Відгуки
