@@ -22,19 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroBg = document.getElementById('hero-bg');
     if (heroBg) heroBg.style.backgroundImage = `url('${CONFIG.hero.background_image}')`;
     
-    const spotsLeft = Math.floor(Math.random() * 8) + 2; // випадок від 2 до 9
-    document.getElementById('dynamic-spots').textContent = spotsLeft;
-    
-    // Логіка ціни (що менше місць, то вища ціна)
-    let oldPrice = "12\xA0500\xA0грн";
-    let curPrice = "9\xA0900\xA0грн";
-    if (spotsLeft <= 3) {
-        oldPrice = "14\xA0000\xA0грн";
-        curPrice = "11\xA0500\xA0грн";
-    }
-
-    document.getElementById('hero-old-price').textContent = oldPrice;
-    document.getElementById('hero-current-price').textContent = curPrice;
+    // Логіка ціни та місць (видалено за запитом користувача)
 
     // About Section
     const aboutImg = document.getElementById('about-image');
@@ -70,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="shift-month">${shift.month}</span>
                     <h3 class="shift-dates">${shift.dates}</h3>
                     <p class="shift-group">${shift.group}</p>
+                    <div style="margin-top: 20px;">
+                        <p class="shift-places">Залишилось: <span style="font-weight:bold">${shift.places || 0}</span> місць</p>
+                        <div class="shift-price">${shift.price || ''}</div>
+                    </div>
                 </div>
             `;
             shiftsSlider.appendChild(s);
@@ -82,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (masonryGrid && CONFIG.gallery && CONFIG.gallery.length > 0) {
         masonryGrid.innerHTML = '';
-        const limit = window.matchMedia("(max-width: 768px)").matches ? 1 : 3;
+        const limit = window.matchMedia("(max-width: 768px)").matches ? 2 : 6;
         const initialPhotos = Math.min(limit, CONFIG.gallery.length);
         
         for (let i = 0; i < initialPhotos; i++) {
@@ -97,12 +89,33 @@ document.addEventListener('DOMContentLoaded', () => {
             showMoreBtn.addEventListener('click', () => {
                 for (let i = initialPhotos; i < CONFIG.gallery.length; i++) {
                     const newItem = document.createElement('div');
-                    newItem.className = 'gallery-item pop-in';
+                    newItem.className = 'gallery-item pop-in extra-photo';
                     newItem.innerHTML = `<img src="${CONFIG.gallery[i]}" class="gallery-img" loading="lazy">`;
                     newItem.addEventListener('click', () => openLightbox(CONFIG.gallery[i]));
                     masonryGrid.appendChild(newItem);
                 }
                 showMoreBtn.parentElement.style.display = 'none';
+
+                // Add hide button
+                let hideBtnContainer = document.getElementById('hide-gallery-container');
+                if (!hideBtnContainer) {
+                    hideBtnContainer = document.createElement('div');
+                    hideBtnContainer.id = 'hide-gallery-container';
+                    hideBtnContainer.style.textAlign = 'center';
+                    hideBtnContainer.style.marginTop = '30px';
+                    hideBtnContainer.innerHTML = `<button id="hide-gallery" class="btn" style="background: #95a5a6; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Сховати фото</button>`;
+                    masonryGrid.parentElement.appendChild(hideBtnContainer);
+
+                    document.getElementById('hide-gallery').addEventListener('click', () => {
+                        const extraPhotos = masonryGrid.querySelectorAll('.extra-photo');
+                        extraPhotos.forEach(p => p.remove());
+                        hideBtnContainer.style.display = 'none';
+                        showMoreBtn.parentElement.style.display = 'block';
+                        document.getElementById('gallery').scrollIntoView({behavior: 'smooth', block: 'start'});
+                    });
+                } else {
+                    hideBtnContainer.style.display = 'block';
+                }
             });
         } else if (showMoreBtn) {
             showMoreBtn.parentElement.style.display = 'none';
@@ -143,6 +156,49 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const socVb = document.getElementById('soc-vb');
         if (socVb && CONFIG.socials.viber) socVb.href = CONFIG.socials.viber;
+    }
+
+    // Video Reviews from Config
+    const parentVideoContainer = document.getElementById('parent-videos-container');
+    if (parentVideoContainer && CONFIG.parentVideoReviews) {
+        parentVideoContainer.innerHTML = '';
+        CONFIG.parentVideoReviews.forEach(url => {
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.width = "100%";
+            iframe.height = "250";
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            iframe.style.borderRadius = "12px";
+            parentVideoContainer.appendChild(iframe);
+        });
+    }
+
+    const childrenVideoContainer = document.getElementById('children-videos-container');
+    if (childrenVideoContainer && CONFIG.childrenVideoReviews) {
+        childrenVideoContainer.innerHTML = '';
+        CONFIG.childrenVideoReviews.forEach(url => {
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.width = "100%";
+            iframe.height = "250";
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            iframe.style.borderRadius = "12px";
+            childrenVideoContainer.appendChild(iframe);
+        });
+    }
+
+    // Location & Comfort Images from Config
+    const locHousingImg = document.getElementById('loc-housing-img');
+    const locFoodImg = document.getElementById('loc-food-img');
+    if (locHousingImg && CONFIG.locationImages && CONFIG.locationImages.housing) {
+        locHousingImg.src = CONFIG.locationImages.housing;
+    }
+    if (locFoodImg && CONFIG.locationImages && CONFIG.locationImages.food) {
+        locFoodImg.src = CONFIG.locationImages.food;
     }
 
     document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -253,8 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         successDiv.id = 'bottom-success';
                         successDiv.innerHTML = `
                             <div class="success-icon" style="font-size: 4rem; color: #10B981; margin-bottom: 20px;"><i class="ph-fill ph-check-circle"></i></div>
-                            <h3 class="contact-title" style="margin-bottom: 10px;">Дякуємо! Ваша заявка прийнята</h3>
-                            <p class="contact-subtitle" style="font-size: 1.2rem;">Ми вам обов'язково зателефонуємо.</p>
+                            <h3 class="contact-title" style="margin-bottom: 10px;">Дякуємо! Вашу заявку прийнято,</h3>
+                            <p class="contact-subtitle" style="font-size: 1.2rem;">ми зателефонуємо вам найближчим часом</p>
                         `;
                         contactBox.appendChild(successDiv);
                     }
@@ -268,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.disabled = false;
             };
 
-            const GOOGLE_SCRIPT_URL = ""; // Додайте сюди посилання на ваш Google Script
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx9feLruWtlB4ratUvVrdEjECkBmZP55UrevTXJje2wmrV5v6LJcR5v5bW7HMuOOdZxEg/exec"; // Додайте сюди посилання на ваш Google Script
 
             if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.trim() !== "") {
                 fetch(GOOGLE_SCRIPT_URL, {
