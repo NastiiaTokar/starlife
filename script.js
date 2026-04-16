@@ -164,7 +164,13 @@ document.addEventListener('DOMContentLoaded', () => {
         parentVideoContainer.innerHTML = '';
         CONFIG.parentVideoReviews.forEach(url => {
             const iframe = document.createElement('iframe');
-            iframe.src = url;
+            let embedUrl = url;
+            if (url.includes('/shorts/')) {
+                embedUrl = url.replace('/shorts/', '/embed/').split('?')[0];
+            } else if (url.includes('watch?v=')) {
+                embedUrl = 'https://www.youtube.com/embed/' + new URL(url).searchParams.get('v');
+            }
+            iframe.src = embedUrl;
             iframe.width = "100%";
             iframe.height = "250";
             iframe.frameBorder = "0";
@@ -180,7 +186,13 @@ document.addEventListener('DOMContentLoaded', () => {
         childrenVideoContainer.innerHTML = '';
         CONFIG.childrenVideoReviews.forEach(url => {
             const iframe = document.createElement('iframe');
-            iframe.src = url;
+            let embedUrl = url;
+            if (url.includes('/shorts/')) {
+                embedUrl = url.replace('/shorts/', '/embed/').split('?')[0];
+            } else if (url.includes('watch?v=')) {
+                embedUrl = 'https://www.youtube.com/embed/' + new URL(url).searchParams.get('v');
+            }
+            iframe.src = embedUrl;
             iframe.width = "100%";
             iframe.height = "250";
             iframe.frameBorder = "0";
