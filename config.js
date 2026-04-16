@@ -9,7 +9,7 @@ const CONFIG = {
 
     // Блок 1. Головний екран (Hero)
     hero: {
-        background_image: "images/photo11.png",
+        background_image: "images/photo 11.png",
     },
 
     // Блок 2. Про нас (Star Life School)
@@ -71,18 +71,24 @@ const CONFIG = {
 
     // Зображення для блоку "Локація та комфорт"
     locationImages: {
-        housing: "images/family_room.png", // Замініть на реальний шлях до фото проживання
-        food: "images/food1.JPEG" // Замініть на реальний шлях до фото харчування
+        housing: "images/rooom.jfif", // Замініть на реальний шлях до фото проживання
+        food: "images/food1.JPEG", // Замініть на реальний шлях до фото харчування
+        sports: "images/foto1.webp",      // Спортивні майданчики
+        beach: "images/foto2.jfif",       // Пляж
+        horses: "images/foto3.webp",      // Кінний клуб
+        ropes: "images/foto4.png",       // Мотузковий парк
+        kids: "images/foto5.png",        // Дитячі зони (гойдалки, гірки)
+        gazebos: "images/foto6.webp"      // Альтанки та зони відпочинку
     },
 
     // Відеовідгуки від батьків (YouTube)
     parentVideoReviews: [
-        "https://www.youtube.com/embed/BJ6OEguB_wk?si=Lrx0Umifme7St2wO" // Приклад, замініть на ваш
+        "https://youtube.com/shorts/E890RUXqugo?si=0UT3c256KDo65xcR"
     ],
 
     // Відеовідгук від дітей (YouTube)
     childrenVideoReviews: [
-        "https://www.youtube.com/embed/9DnXHfjEYKI?si=QzDzEbEglU2ppLd-" // Приклад, замініть на ваш
+        "https://youtube.com/shorts/YakXGOuYmIU?si=SXi8TlQ4gwyTjeFu"
     ],
 
     // Блок 5. Галерея (6-7 фото різного формату)
@@ -104,7 +110,7 @@ const CONFIG = {
         {
             name: "Ольга Наревач",
             avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop",
-            text: "Дякуємо величесзне, що дбали про наших дітей! Дякуємо за емоції! Дякуємо за досвід! Дякуємо за прекрасні дні! До нових зустрічей!"
+            text: "Дякуємо величезне, що дбали про наших дітей! Дякуємо за емоції! Дякуємо за досвід! Дякуємо за прекрасні дні! До нових зустрічей!"
         },
         {
             name: "Альона Свідінська",

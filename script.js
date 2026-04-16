@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // === 1. ІНІЦІАЛІЗАЦІЯ ДАНИХ З CONFIG ===
-    
+
     // Логотип
     const headerLogoImg = document.getElementById('header-logo-img');
     const headerLogoText = document.getElementById('header-logo-text');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero Section / Ціна від кількості місць
     const heroBg = document.getElementById('hero-bg');
     if (heroBg) heroBg.style.backgroundImage = `url('${CONFIG.hero.background_image}')`;
-    
+
     // Логіка ціни та місць (видалено за запитом користувача)
 
     // About Section
@@ -71,12 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gallery
     const masonryGrid = document.getElementById('masonry-grid');
     const showMoreBtn = document.getElementById('show-more-gallery');
-    
+
     if (masonryGrid && CONFIG.gallery && CONFIG.gallery.length > 0) {
         masonryGrid.innerHTML = '';
         const limit = window.matchMedia("(max-width: 768px)").matches ? 2 : 6;
         const initialPhotos = Math.min(limit, CONFIG.gallery.length);
-        
+
         for (let i = 0; i < initialPhotos; i++) {
             const item = document.createElement('div');
             item.className = 'gallery-item';
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         extraPhotos.forEach(p => p.remove());
                         hideBtnContainer.style.display = 'none';
                         showMoreBtn.parentElement.style.display = 'block';
-                        document.getElementById('gallery').scrollIntoView({behavior: 'smooth', block: 'start'});
+                        document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     });
                 } else {
                     hideBtnContainer.style.display = 'block';
@@ -147,13 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (socialContainer && CONFIG.socials) {
         const socInst = document.getElementById('soc-inst');
         if (socInst && CONFIG.socials.instagram) socInst.href = CONFIG.socials.instagram;
-        
+
         const socTt = document.getElementById('soc-tt');
         if (socTt && CONFIG.socials.tiktok) socTt.href = CONFIG.socials.tiktok;
-        
+
         const socTg = document.getElementById('soc-tg');
         if (socTg && CONFIG.socials.telegram) socTg.href = CONFIG.socials.telegram;
-        
+
         const socVb = document.getElementById('soc-vb');
         if (socVb && CONFIG.socials.viber) socVb.href = CONFIG.socials.viber;
     }
@@ -201,10 +201,27 @@ document.addEventListener('DOMContentLoaded', () => {
         locFoodImg.src = CONFIG.locationImages.food;
     }
 
+    // Додаткові фото Локації
+    const locSportsImg = document.getElementById('loc-sports-img');
+    const locBeachImg = document.getElementById('loc-beach-img');
+    const locHorsesImg = document.getElementById('loc-horses-img');
+    const locRopesImg = document.getElementById('loc-ropes-img');
+    const locKidsImg = document.getElementById('loc-kids-img');
+    const locGazebosImg = document.getElementById('loc-gazebos-img');
+    
+    if (CONFIG.locationImages) {
+        if (locSportsImg && CONFIG.locationImages.sports) locSportsImg.src = CONFIG.locationImages.sports;
+        if (locBeachImg && CONFIG.locationImages.beach) locBeachImg.src = CONFIG.locationImages.beach;
+        if (locHorsesImg && CONFIG.locationImages.horses) locHorsesImg.src = CONFIG.locationImages.horses;
+        if (locRopesImg && CONFIG.locationImages.ropes) locRopesImg.src = CONFIG.locationImages.ropes;
+        if (locKidsImg && CONFIG.locationImages.kids) locKidsImg.src = CONFIG.locationImages.kids;
+        if (locGazebosImg && CONFIG.locationImages.gazebos) locGazebosImg.src = CONFIG.locationImages.gazebos;
+    }
+
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     // === 2. UI ЛОГІКА ===
-    
+
     // Burger Menu
     const burgerBtn = document.getElementById('burger-menu');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -255,9 +272,9 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const item = button.parentElement;
             item.classList.toggle('active');
-            
+
             const parent = item.closest('.faq-list');
-            if(parent) {
+            if (parent) {
                 parent.querySelectorAll('.faq-item').forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
@@ -275,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-success-view').classList.add('hidden');
     }
     function closeModal() { modal.classList.remove('active'); }
-    
+
     document.querySelectorAll('.trigger-modal').forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
     document.getElementById('close-modal').addEventListener('click', closeModal);
     document.getElementById('close-success-btn').addEventListener('click', closeModal);
@@ -303,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.style.display = 'none';
                     contactBox.querySelector('.contact-title').style.display = 'none';
                     contactBox.querySelector('.contact-subtitle').style.display = 'none';
-                    
+
                     if (!document.getElementById('bottom-success')) {
                         const successDiv = document.createElement('div');
                         successDiv.id = 'bottom-success';
