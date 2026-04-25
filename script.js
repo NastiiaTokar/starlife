@@ -142,20 +142,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Social Links
-    const socialContainer = document.getElementById('social-links-container');
-    if (socialContainer && CONFIG.socials) {
+    // Social Links & Contacts
+    if (CONFIG.socials) {
         const socInst = document.getElementById('soc-inst');
         if (socInst && CONFIG.socials.instagram) socInst.href = CONFIG.socials.instagram;
 
         const socTt = document.getElementById('soc-tt');
         if (socTt && CONFIG.socials.tiktok) socTt.href = CONFIG.socials.tiktok;
 
-        const socTg = document.getElementById('soc-tg');
-        if (socTg && CONFIG.socials.telegram) socTg.href = CONFIG.socials.telegram;
+        const socTgChannel = document.getElementById('soc-tg-channel');
+        if (socTgChannel && CONFIG.socials.telegram_channel) socTgChannel.href = CONFIG.socials.telegram_channel;
 
-        const socVb = document.getElementById('soc-vb');
-        if (socVb && CONFIG.socials.viber) socVb.href = CONFIG.socials.viber;
+        const socTgChat = document.getElementById('soc-tg-chat');
+        if (socTgChat && CONFIG.socials.telegram_chat_phone) {
+            socTgChat.href = `https://t.me/${CONFIG.socials.telegram_chat_phone.replace(/\+/g, '')}`;
+        }
+
+        const instaCtaLogo = document.getElementById('insta-cta-logo');
+        if (instaCtaLogo && CONFIG.socials.instagram_logo) {
+            instaCtaLogo.src = CONFIG.socials.instagram_logo;
+        }
+
+        const instaLogoLink = document.getElementById('insta-logo-link');
+        if (instaLogoLink && CONFIG.socials.instagram) {
+            instaLogoLink.href = CONFIG.socials.instagram;
+        }
+    }
+
+    // PDF Documents
+    if (CONFIG.pdfs) {
+        const docMap = {
+            'doc-rules': CONFIG.pdfs.rules,
+            'doc-packing': CONFIG.pdfs.packing_list,
+            'doc-contract': CONFIG.pdfs.contract,
+            'doc-medical': CONFIG.pdfs.medical_form,
+            'doc-program': CONFIG.pdfs.program
+        };
+        for (const [id, url] of Object.entries(docMap)) {
+            const el = document.getElementById(id);
+            if (el && url) el.href = url;
+        }
     }
 
     // Video Reviews from Config

@@ -117,6 +117,22 @@
         </div>
     </section>
 
+    <!-- Instagram CTA Section -->
+    <section class="instagram-cta bg-white-shapes" style="padding: 60px 20px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="container animate reveal-up" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <p style="font-size: 1.25rem; font-weight: 600; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                Ось посилання на наш Instagram, де ви можете познайомитись з нами та побачити живу атмосферу
+            </p>
+            <div style="position: relative; display: inline-block; margin-top: 30px;">
+                <!-- Анімована стрілочка -->
+                <i class="ph-fill ph-arrow-fat-lines-down bounce-arrow" style="position: absolute; top: -55px; left: 50%; transform: translateX(-50%); font-size: 2.5rem; color: var(--clr-primary);"></i>
+                <a href="#" target="_blank" id="insta-logo-link" style="display: inline-block; position: relative; text-decoration: none;">
+                    <img src="" id="insta-cta-logo" class="insta-logo-hover" alt="Instagram Logo" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 30px rgba(255, 90, 0, 0.4); border: 4px solid var(--clr-primary);">
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features section bg-white-shapes" id="features">
         <div class="container">
@@ -143,6 +159,10 @@
             <div class="shifts-slider" id="shifts-slider">
                 <!-- Картки 5 змін генеруються JS -->
             </div>
+        </div>
+
+        <div class="container animate reveal-up" style="text-align: center; margin-top: 40px;">
+            <button class="btn btn-large btn-pulse trigger-modal" style="background: var(--clr-white); color: var(--clr-primary); font-weight: 800; padding: 20px 50px; font-size: 1.4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-radius: 50px;">Забронювати</button>
         </div>
     </section>
 
@@ -204,61 +224,56 @@
         </div>
     </section>
 
-    <!-- Program Section -->
-    <section class="program section bg-white-shapes" id="program">
+    <!-- Documents Section -->
+    <section class="documents section bg-white-shapes" id="documents">
         <div class="container">
             <div class="section-header animate reveal-up">
-                <h2 class="section-title" style="color: var(--clr-dark) !important;">Програма табору</h2>
-                <p
-                    style="text-align: center; font-size: 1.2rem; margin-top: 10px; font-weight: 500; color: var(--clr-text);">
-                    Це баланс розвитку, відпочинку та яскравих емоцій.</p>
+                <h2 class="section-title">Що потрібно знати для відпочинку у таборі</h2>
             </div>
-
-            <div class="program-grid animate reveal-up"
-                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-                <div class="program-card">
-                    <i class="ph ph-mask-happy"
-                        style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Акторське мистецтво</h4>
-                    <ul class="program-list">
-                        <li>акторські тренінги</li>
-                        <li>робота з голосом і тілом для розкриття потенціалу</li>
-                    </ul>
+            <div class="documents-grid animate reveal-up"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 30px;">
+                
+                <div class="document-card" style="background: white; padding: 25px 20px; border-radius: 16px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                    <div>
+                        <i class="ph ph-file-text" style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Правила</h4>
+                    </div>
+                    <a href="#" id="doc-rules" target="_blank" class="btn btn-outline" style="width: 100%; padding: 10px;">Переглянути</a>
                 </div>
 
-                <div class="program-card">
-                    <i class="ph ph-puzzle-piece"
-                        style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Командна гра</h4>
-                    <ul class="program-list">
-                        <li>захоплюючі квести та ігри</li>
-                        <li>об'єднання дітей та нові знайомства</li>
-                    </ul>
+                <div class="document-card" style="background: white; padding: 25px 20px; border-radius: 16px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                    <div>
+                        <i class="ph ph-backpack" style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Список речей</h4>
+                    </div>
+                    <a href="#" id="doc-packing" target="_blank" class="btn btn-outline" style="width: 100%; padding: 10px;">Переглянути</a>
                 </div>
 
-                <div class="program-card">
-                    <i class="ph ph-ticket"
-                        style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Розваги</h4>
-                    <ul class="program-list">
-                        <li>тематичні вечірки</li>
-                        <li>дискотеки</li>
-                        <li>відвідування парку Уруру</li>
-                    </ul>
+                <div class="document-card" style="background: white; padding: 25px 20px; border-radius: 16px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                    <div>
+                        <i class="ph ph-handshake" style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Договір</h4>
+                    </div>
+                    <a href="#" id="doc-contract" target="_blank" class="btn btn-outline" style="width: 100%; padding: 10px;">Переглянути</a>
                 </div>
 
-                <div class="program-card">
-                    <i class="ph ph-tree-evergreen"
-                        style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Активний відпочинок</h4>
-                    <ul class="program-list">
-                        <li>мотузковий парк</li>
-                        <li>відпочинок на пляжі та живе спілкування на свіжому повітрі</li>
-                    </ul>
+                <div class="document-card" style="background: white; padding: 25px 20px; border-radius: 16px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                    <div>
+                        <i class="ph ph-heartbeat" style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Медична анкета</h4>
+                    </div>
+                    <a href="#" id="doc-medical" target="_blank" class="btn btn-outline" style="width: 100%; padding: 10px;">Переглянути</a>
                 </div>
+
+                <div class="document-card" style="background: white; padding: 25px 20px; border-radius: 16px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                    <div>
+                        <i class="ph ph-calendar-check" style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Програма табору</h4>
+                    </div>
+                    <a href="#" id="doc-program" target="_blank" class="btn btn-outline" style="width: 100%; padding: 10px;">Переглянути</a>
+                </div>
+
             </div>
-
-
         </div>
     </section>
 
@@ -481,13 +496,23 @@
                 <p class="footer-desc" style="margin-top: 15px;">Кінотабір для дітей та підлітків, де народжуються нові
                     зірки та створюються найякісніші спогади літа.</p>
             </div>
-            <div class="footer-socials">
-                <p>Ми в соцмережах:</p>
-                <div class="social-icons" id="social-links-container">
-                    <a href="#" target="_blank" class="social-icon" id="soc-inst" aria-label="Instagram"><i
-                            class="ph-fill ph-instagram-logo"></i></a>
-                    <a href="#" target="_blank" class="social-icon" id="soc-tt" aria-label="TikTok"><i
-                            class="ph-fill ph-tiktok-logo"></i></a>
+            <div class="footer-socials" style="display: flex; gap: 40px; flex-wrap: wrap;" id="footer-socials-box">
+                <div class="footer-soc-part">
+                    <p style="margin-bottom: 10px;">Соціальні мережі:</p>
+                    <div class="social-icons" id="social-links-container">
+                        <a href="#" target="_blank" class="social-icon" id="soc-inst" aria-label="Instagram"><i
+                                class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" target="_blank" class="social-icon" id="soc-tt" aria-label="TikTok"><i
+                                class="ph-fill ph-tiktok-logo"></i></a>
+                        <a href="#" target="_blank" class="social-icon" id="soc-tg-channel" aria-label="Telegram Channel"><i
+                                class="ph-fill ph-telegram-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-soc-part">
+                    <p style="margin-bottom: 10px;">Напишіть нам у месенджер:</p>
+                    <a href="#" target="_blank" id="soc-tg-chat" class="btn btn-primary" style="padding: 10px 20px; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="ph-fill ph-telegram-logo" style="font-size: 1.2rem;"></i> Чат в Telegram
+                    </a>
                 </div>
             </div>
         </div>
@@ -517,6 +542,10 @@
                         <label for="modal-phone">Номер телефону</label>
                         <input type="tel" id="modal-phone" name="phone" class="form-control" placeholder="+380"
                             value="+380" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-telegram">Напишіть ваш нік @ в телеграмі</label>
+                        <input type="text" id="modal-telegram" name="telegram" class="form-control" placeholder="@username" required>
                     </div>
                     <div class="form-group">
                         <label for="modal-shift">Оберіть зміну</label>

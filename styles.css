@@ -337,10 +337,12 @@ body {
 
 .nav-list {
     display: flex;
-    gap: 30px;
+    gap: clamp(20px, 3vw, 45px); /* Адаптивне розтягнення */
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 30px;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .nav-link {
@@ -1790,4 +1792,57 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+}
+
+/* --- Instagram CTA Animations --- */
+@keyframes bounce-arrow {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(15px); }
+}
+
+.bounce-arrow {
+    animation: bounce-arrow 1.5s infinite ease-in-out;
+}
+
+.insta-logo-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insta-logo-hover:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 45px rgba(255, 90, 0, 0.6) !important;
+}
+
+/* --- Global Mobile Centering Fixes (for modified blocks) --- */
+@media (max-width: 768px) {
+    .instagram-cta,
+    .documents .container,
+    .shifts-action-bottom,
+    #footer-socials-box {
+        text-align: center !important;
+    }
+
+    .instagram-cta p {
+        text-align: center !important;
+    }
+
+    #footer-socials-box {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 25px !important;
+    }
+
+    .footer-soc-part {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .document-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 320px;
+    }
 }

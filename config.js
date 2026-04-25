@@ -27,14 +27,7 @@ const CONFIG = {
 
     // Блок 4. Зміни (5 карток)
     shifts: [
-        {
-            month: "Червень",
-            dates: "15.06 - 21.06",
-            group: "12-17 років",
-            bg_image: "images/1.jpeg",
-            places: 20,
-            price: "від 16 000 грн"
-        },
+
         {
             month: "Червень",
             dates: "22.06 - 28.06",
@@ -124,11 +117,24 @@ const CONFIG = {
         }
     ],
 
-    // Footer - Соціальні мережі
+    // Footer - Соціальні мережі та контакти
     socials: {
         instagram: "https://www.instagram.com/starlifeschool?igsh=MWowbzJlYTcyMThsZA==",
         tiktok: "https://www.tiktok.com/@starlifeschool?_r=1&_t=ZS-952KdH23u2E",
+        telegram_channel: "https://t.me/starlifeschool",
+        telegram_chat_phone: "+380668394718",
+        instagram_logo: "images/logo.png"
+    },
+
+    // PDF Файли для блоку "Що потрібно знати"
+    pdfs: {
+        rules: "media/rules.pdf",
+        packing_list: "media/packing_list.pdf",
+        contract: "media/contract.pdf",
+        medical_form: "media/medical_form.pdf",
+        program: "media/program.pdf"
     }
 };
 
 if (typeof module !== 'undefined' && module.exports) module.exports = CONFIG;
+
