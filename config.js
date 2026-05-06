@@ -19,10 +19,10 @@ const CONFIG = {
 
     // Блок 3. Чому ми? (4 картки)
     features: [
-        { id: 'f1', title: "Маленькі групи — максимум уваги", desc: "У нас невелика кількість дітей, тому кожна дитина отримує реальну увагу.", image: "images/ph1.png" },
-        { id: 'f2', title: "Професійні актори як наставники", desc: "Наші наставники - діючі актори львівських театрів, які мають досвід роботи з дітьми.", image: "images/ph2.png" },
-        { id: 'f3', title: "Комфорт для першого табору", desc: "Нас обирають батьки, чиї діти їдуть у табір вперше. У нас затишна атмосфера.", image: "images/ph3.png" },
-        { id: 'f4', title: "Локація біля Львова + природа", desc: "Табір знаходиться недалеко від Львова, в оточенні природи, свіжого повітря і великої території для активностей.", image: "images/ph4.png" }
+        { id: 'f1', title: "Маленькі групи — максимум уваги", desc: "У нас невелика кількість дітей, тому кожна дитина отримує реальну увагу.", image: "images/ph11.png" },
+        { id: 'f2', title: "Професійні актори як наставники", desc: "Наші наставники - діючі актори львівських театрів, які мають досвід роботи з дітьми.", image: "images/ph22.png" },
+        { id: 'f3', title: "Комфорт для першого табору", desc: "Нас обирають батьки, чиї діти їдуть у табір вперше. У нас затишна атмосфера.", image: "images/ph33.png" },
+        { id: 'f4', title: "Локація біля Львова + природа", desc: "Табір знаходиться недалеко від Львова, в оточенні природи, свіжого повітря і великої території для активностей.", image: "images/ph44.png" }
     ],
 
     // Блок 4. Зміни (5 карток)
@@ -64,7 +64,7 @@ const CONFIG = {
 
     // Зображення для блоку "Локація та комфорт"
     locationImages: {
-        housing: "images/rooom.jfif", // Замініть на реальний шлях до фото проживання
+        housing: "images/room.jpg", // Замініть на реальний шлях до фото проживання
         food: "images/food1.JPEG", // Замініть на реальний шлях до фото харчування
         sports: "images/foto1.webp",      // Спортивні майданчики
         beach: "images/foto2.jfif",       // Пляж
@@ -122,7 +122,7 @@ const CONFIG = {
         instagram: "https://www.instagram.com/starlifeschool?igsh=MWowbzJlYTcyMThsZA==",
         tiktok: "https://www.tiktok.com/@starlifeschool?_r=1&_t=ZS-952KdH23u2E",
         telegram_channel: "https://t.me/starlifeschool",
-        telegram_chat_phone: "+380668394718",
+        telegram_chat_phone: "https://t.me/starlifeschool",
         instagram_logo: "images/logo.png"
     },
 
