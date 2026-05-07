@@ -168,18 +168,10 @@ body {
     border-radius: 50% 50% 0 0;
 }
 
-#shifts,
-#reviews,
-#program {
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-}
-
 #shifts .section-title,
 #reviews .section-title,
-#program .section-title,
-#shifts .legend {
-    color: var(--clr-white) !important;
+#program .section-title {
+    color: inherit;
 }
 
 #shifts::before,
@@ -274,6 +266,11 @@ body {
     animation: pulse 2s infinite;
 }
 
+.btn-hero-cta {
+    animation: hero-cta-pulse 1s infinite ease-in-out;
+    border: 2px solid var(--clr-primary);
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -289,6 +286,47 @@ body {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(255, 90, 0, 0);
     }
+}
+
+@keyframes hero-cta-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        background-color: var(--clr-white);
+        background-image: none;
+        color: var(--clr-primary);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        background-color: var(--clr-primary);
+        background-image: var(--gradient-primary);
+        color: var(--clr-white);
+        box-shadow: 0 10px 30px rgba(255, 90, 0, 0.4);
+    }
+}
+
+/* Background Classes */
+.bg-orange-solid {
+    background-color: var(--clr-primary) !important;
+    color: var(--clr-white) !important;
+}
+
+.bg-orange-solid .section-title,
+.bg-orange-solid .section-subtitle,
+.bg-orange-solid .legend,
+.bg-orange-solid .about-text,
+.bg-orange-solid .about-list {
+    color: var(--clr-white) !important;
+}
+
+.bg-white-shapes {
+    background-color: var(--clr-white) !important;
+    color: var(--clr-text) !important;
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 90, 0, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
 }
 
 /* --- Header & Nav --- */
@@ -314,6 +352,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    gap: 30px;
 }
 
 .logo {
@@ -324,6 +363,7 @@ body {
     font-weight: 800;
     color: var(--clr-primary);
     letter-spacing: -0.5px;
+    flex-shrink: 0;
 }
 
 .logo-img {
@@ -335,22 +375,28 @@ body {
     display: none;
 }
 
+.nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .nav-list {
     display: flex;
-    gap: clamp(20px, 3vw, 45px); /* Адаптивне розтягнення */
     list-style: none;
     padding: 0;
-    margin: 0 30px;
-    justify-content: center;
-    flex-grow: 1;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .nav-link {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--clr-text);
     position: relative;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: var(--transition-normal);
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -1525,6 +1571,14 @@ body {
     color: var(--clr-white) !important;
 }
 
+/* Specific override for Location cards to have black text inside the orange section */
+#location .loc-card,
+#location .loc-card p,
+#location .loc-card strong,
+#location .loc-card span {
+    color: #000 !important;
+}
+
 .bg-orange-solid .btn-outline {
     border-color: var(--clr-white);
     color: var(--clr-white);
@@ -1796,8 +1850,15 @@ body {
 
 /* --- Instagram CTA Animations --- */
 @keyframes bounce-arrow {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(15px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(15px);
+    }
 }
 
 .bounce-arrow {
@@ -1815,6 +1876,7 @@ body {
 
 /* --- Global Mobile Centering Fixes (for modified blocks) --- */
 @media (max-width: 768px) {
+
     .instagram-cta,
     .documents .container,
     .shifts-action-bottom,

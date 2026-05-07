@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${feature.image}" alt="${feature.title}" class="feature-img" loading="lazy">
                     <h3 class="feature-title">${feature.title}</h3>
                 </div>
-                <div class="feature-desc" style="padding: 15px 20px; font-size: 0.9rem; color: var(--clr-text); opacity: 0.6; line-height: 1.5;">${feature.desc || ''}</div>
+                <div class="feature-desc" style="padding: 15px 20px; font-size: 0.95rem; color: #000; line-height: 1.5; font-weight: 500;">${feature.desc || ''}</div>
             `;
             featuresGrid.appendChild(card);
         });
