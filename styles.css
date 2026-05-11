@@ -834,6 +834,14 @@ body {
     font-weight: 500;
 }
 
+.shift-price-note {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
 /* --- Gallery --- */
 .gallery-title {
     line-height: 1.1;

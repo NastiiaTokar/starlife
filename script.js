@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div style="margin-top: 20px;">
                         <p class="shift-places">Залишилось: <span style="font-weight:bold">${shift.places || 0}</span> місць</p>
                         <div class="shift-price">${shift.price || ''}</div>
+                        <div class="shift-price-note">*вартість залежить від кількості наявних місць</div>
                     </div>
                 </div>
             `;

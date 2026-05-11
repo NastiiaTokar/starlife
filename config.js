@@ -33,8 +33,8 @@ const CONFIG = {
             dates: "22.06 - 28.06",
             group: "8-11 років",
             bg_image: "images/2.webp",
-            places: 11,
-            price: "від 18 000 грн"
+            places: 10,
+            price: "19 000 грн"
         },
         {
             month: "Липень",
@@ -42,15 +42,15 @@ const CONFIG = {
             group: "12-17 років",
             bg_image: "images/3.jpg",
             places: 13,
-            price: "від 18 000 грн"
+            price: "18 000 грн"
         },
         {
             month: "Липень",
             dates: "27.07 - 02.08",
             group: "8-11 років",
             bg_image: "images/4.jpg",
-            places: 18,
-            price: "від 16 000 грн"
+            places: 17,
+            price: "17 000 грн"
         },
         {
             month: "Серпень",
@@ -58,7 +58,7 @@ const CONFIG = {
             group: "змішана зміна",
             bg_image: "images/5.jpg",
             places: 19,
-            price: "від 16 000 грн"
+            price: "16 000 грн"
         }
     ],
 
