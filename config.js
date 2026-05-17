@@ -33,7 +33,7 @@ const CONFIG = {
             dates: "22.06 - 28.06",
             group: "8-11 років",
             bg_image: "images/2.webp",
-            places: 10,
+            places: 8,
             price: "19 000 грн"
         },
         {
@@ -41,8 +41,8 @@ const CONFIG = {
             dates: "06.07 - 12.07",
             group: "12-17 років",
             bg_image: "images/3.jpg",
-            places: 13,
-            price: "18 000 грн"
+            places: 10,
+            price: "19 000 грн"
         },
         {
             month: "Липень",
