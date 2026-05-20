@@ -219,6 +219,18 @@ body {
     margin: 0 auto;
 }
 
+.location-subtitle {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 auto 6px;
+    max-width: 700px;
+    color: var(--clr-white);
+}
+
+.location .section-header {
+    margin-bottom: 22px;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
