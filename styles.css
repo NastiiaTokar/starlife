@@ -846,6 +846,35 @@ body {
     font-weight: 500;
 }
 
+.shift-places {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.shift-places-count {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.shift-places--last {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255, 0, 0, 0.9);
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(255, 90, 0, 0.28);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.shift-places--last .shift-places-label {
+    font-weight: 800;
+}
+
 .shift-price-note {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.8);

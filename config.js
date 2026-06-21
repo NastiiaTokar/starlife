@@ -33,7 +33,7 @@ const CONFIG = {
             dates: "22.06 - 28.06",
             group: "8-11 років",
             bg_image: "images/2.webp",
-            places: 3,
+            places: 1,
             price: "19 000 грн"
         },
         {
@@ -52,14 +52,6 @@ const CONFIG = {
             places: 11,
             price: "19 000 грн"
         },
-        {
-            month: "Серпень",
-            dates: "17.08 - 23.08",
-            group: "змішана зміна",
-            bg_image: "images/5.jpg",
-            places: 19,
-            price: "16 000 грн"
-        }
     ],
 
     // Зображення для блоку "Локація та комфорт"

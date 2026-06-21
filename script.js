@@ -49,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const shiftsSlider = document.getElementById('shifts-slider');
     if (shiftsSlider && CONFIG.shifts) {
         CONFIG.shifts.forEach((shift, idx) => {
+            const isLastSpot = Number(shift.places) === 1;
+            const placesMarkup = isLastSpot
+                ? `<p class="shift-places shift-places--last"><span class="shift-places-label">Останнє місце</span></p>`
+                : `<p class="shift-places">Залишилось: <span class="shift-places-count">${shift.places || 0}</span> місць</p>`;
             const s = document.createElement('div');
             s.className = 'shift-card';
             s.style.backgroundImage = `url('${shift.bg_image}')`;
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3 class="shift-dates">${shift.dates}</h3>
                     <p class="shift-group">${shift.group}</p>
                     <div style="margin-top: 20px;">
-                        <p class="shift-places">Залишилось: <span style="font-weight:bold">${shift.places || 0}</span> місць</p>
+                        ${placesMarkup}
                         <div class="shift-price">${shift.price || ''}</div>
                         <div class="shift-price-note">*вартість залежить від кількості наявних місць</div>
                     </div>
