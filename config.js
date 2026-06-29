@@ -41,7 +41,7 @@ const CONFIG = {
             dates: "06.07 - 12.07",
             group: "12-17 років",
             bg_image: "images/3.jpg",
-            places: 8,
+            places: 6,
             price: "19 000 грн"
         },
         {

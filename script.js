@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const placesMarkup = isLastSpot
                 ? `<p class="shift-places shift-places--last"><span class="shift-places-label">Останнє місце</span></p>`
                 : `<p class="shift-places">Залишилось: <span class="shift-places-count">${shift.places || 0}</span> місць</p>`;
+
+            // For June (Червень) show that the shift already occurred
+            const isJune = shift.month && String(shift.month).toLowerCase().includes('червень');
+
+            const contentBlock = isJune
+                ? `<div style="margin-top: 20px;"><p class="shift-occurred">Зміна відбулась</p></div>`
+                : `<div style="margin-top: 20px;">${placesMarkup}<div class="shift-price">${shift.price || ''}</div><div class="shift-price-note">*вартість залежить від кількості наявних місць</div></div>`;
+
             const s = document.createElement('div');
             s.className = 'shift-card';
             s.style.backgroundImage = `url('${shift.bg_image}')`;
@@ -62,11 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="shift-month">${shift.month}</span>
                     <h3 class="shift-dates">${shift.dates}</h3>
                     <p class="shift-group">${shift.group}</p>
-                    <div style="margin-top: 20px;">
-                        ${placesMarkup}
-                        <div class="shift-price">${shift.price || ''}</div>
-                        <div class="shift-price-note">*вартість залежить від кількості наявних місць</div>
-                    </div>
+                    ${contentBlock}
                 </div>
             `;
             shiftsSlider.appendChild(s);

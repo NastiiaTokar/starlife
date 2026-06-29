@@ -883,6 +883,21 @@ body {
     line-height: 1.2;
 }
 
+/* Emphasize past shift label: white text with red outline, larger and eye-catching */
+.shift-occurred {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: #d32f2f; /* strong red background */
+    font-size: 1.6rem;
+    font-weight: 900;
+    padding: 16px 18px;
+    border-radius: 8px; /* slightly rounded square */
+    box-shadow: 0 10px 26px rgba(211,47,47,0.28);
+    line-height: 1;
+}
+
 /* --- Gallery --- */
 .gallery-title {
     line-height: 1.1;
