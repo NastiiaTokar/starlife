@@ -34,7 +34,8 @@ const CONFIG = {
             group: "8-11 років",
             bg_image: "images/2.webp",
             places: 1,
-            price: "19 000 грн"
+            price: "19 000 грн",
+            status: "occurred"
         },
         {
             month: "Липень",
@@ -42,14 +43,15 @@ const CONFIG = {
             group: "12-17 років",
             bg_image: "images/3.jpg",
             places: 6,
-            price: "19 000 грн"
+            price: "19 000 грн",
+            status: "occurred"
         },
         {
             month: "Липень",
             dates: "27.07 - 02.08",
             group: "8-11 років",
             bg_image: "images/4.jpg",
-            places: 11,
+            places: 8,
             price: "19 000 грн"
         },
     ],
