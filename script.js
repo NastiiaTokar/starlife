@@ -55,9 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 : `<p class="shift-places">Залишилось: <span class="shift-places-count">${shift.places || 0}</span> місць</p>`;
 
             const isOccurredShift = shift.status === 'occurred';
+            const isAnnouncementShift = shift.status === 'announcement';
 
             const contentBlock = isOccurredShift
                 ? `<div class="shift-status"><p class="shift-occurred">Зміна відбулась</p></div>`
+                : isAnnouncementShift
+                    ? `<div class="shift-status"><p class="shift-occurred shift-announcement">Анонс скоро</p></div>`
                 : `<div class="shift-status">${placesMarkup}<div class="shift-price">${shift.price || ''}</div><div class="shift-price-note">*вартість залежить від кількості наявних місць</div></div>`;
 
             const s = document.createElement('div');

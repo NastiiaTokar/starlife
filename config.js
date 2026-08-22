@@ -29,6 +29,13 @@ const CONFIG = {
     shifts: [
 
         {
+            month: "Жовтень",
+            dates: "26.10 - 01.11",
+            group: "8-17 років",
+            bg_image: "images/anons.png",
+            status: "announcement"
+        },
+        {
             month: "Червень",
             dates: "22.06 - 28.06",
             group: "8-11 років",
@@ -53,6 +60,7 @@ const CONFIG = {
             bg_image: "images/4.jpg",
             places: 2,
             price: "19 000 грн"
+            ,status: "occurred"
         },
     ],
 

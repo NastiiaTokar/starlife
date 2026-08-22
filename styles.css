@@ -918,6 +918,17 @@ body {
     font-weight: 900;
 }
 
+.shift-announcement {
+    color: #4a3500;
+    background: #ffd21f;
+    box-shadow: 0 10px 24px rgba(255, 210, 31, 0.3);
+}
+
+.shift-announcement::before {
+    content: "!";
+    background: rgba(74, 53, 0, 0.14);
+}
+
 /* --- Gallery --- */
 .gallery-title {
     line-height: 1.1;
